@@ -3,6 +3,7 @@ package pl.allegro.finance.tradukisto
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import static pl.allegro.finance.tradukisto.ValueConverters.AZERBAIJANI_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.BRAZILIAN_PORTUGUESE_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.BULGARIAN_INTEGER
 import static pl.allegro.finance.tradukisto.ValueConverters.CZECH_INTEGER
@@ -38,6 +39,7 @@ class ValueConvertersTest extends Specification {
 
         where:
         language               | converter                    || number
+        "Azerbaijani"          | AZERBAIJANI_INTEGER          || "bir min iki yüz otuz dörd"
         "Brazilian Portuguese" | BRAZILIAN_PORTUGUESE_INTEGER || "mil duzentos e trinta e quatro"
         "Bulgarian"            | BULGARIAN_INTEGER            || "хиляда двеста тридесет четири"
         "Czech"                | CZECH_INTEGER                || "jeden tisíc dvě stě třicet čtyři"
@@ -81,6 +83,7 @@ class ValueConvertersTest extends Specification {
 
         where:
         locale                                                           || converter
+        new Locale("az")                                                 || AZERBAIJANI_INTEGER
         new Locale("pt-br")                                              || BRAZILIAN_PORTUGUESE_INTEGER
         new Locale("pt")                                                 || BRAZILIAN_PORTUGUESE_INTEGER
         new Locale("bg")                                                 || BULGARIAN_INTEGER
@@ -136,6 +139,7 @@ class ValueConvertersTest extends Specification {
 
         where:
         languageCode || converter
+        "az"         || AZERBAIJANI_INTEGER
         "pt-br"      || BRAZILIAN_PORTUGUESE_INTEGER
         "pt"         || BRAZILIAN_PORTUGUESE_INTEGER
         "bg"         || BULGARIAN_INTEGER

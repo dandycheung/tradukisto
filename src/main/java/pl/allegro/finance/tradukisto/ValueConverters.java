@@ -12,6 +12,7 @@ import java.util.Objects;
 
 public enum ValueConverters {
 
+    AZERBAIJANI_INTEGER(Container.azerbaijaniContainer().getIntegerConverter(), "az"),
     BRAZILIAN_PORTUGUESE_INTEGER(Container.brazilianPortugueseContainer().getIntegerConverter(), Arrays.asList("pt", "pt-br")),
     ENGLISH_INTEGER(Container.englishContainer().getIntegerConverter(), "en"),
     GERMAN_INTEGER(Container.germanContainer().getIntegerConverter(), "de"),

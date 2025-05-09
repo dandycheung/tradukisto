@@ -6,6 +6,7 @@ import pl.allegro.finance.tradukisto.internal.Container;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import static pl.allegro.finance.tradukisto.internal.Container.azerbaijaniContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.americanEnglishContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.brazilianPortugueseContainer;
 import static pl.allegro.finance.tradukisto.internal.Container.croatianContainer;
@@ -33,6 +34,7 @@ import static pl.allegro.finance.tradukisto.internal.Container.kyrgyzContainer;
 
 public enum MoneyConverters {
 
+    AZERBAIJANI_BANKING_MONEY_VALUE(azerbaijaniContainer().getBankingMoneyConverter()),
     BRAZILIAN_PORTUGUESE_BANKING_MONEY_VALUE(brazilianPortugueseContainer().getBankingMoneyConverter()),
     ENGLISH_BANKING_MONEY_VALUE(englishContainer().getBankingMoneyConverter()),
     AMERICAN_ENGLISH_BANKING_MONEY_VALUE(americanEnglishContainer().getBankingMoneyConverter()),

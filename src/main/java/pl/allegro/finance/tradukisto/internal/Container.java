@@ -4,6 +4,7 @@ import pl.allegro.finance.tradukisto.internal.converters.BigDecimalToBankingMone
 import pl.allegro.finance.tradukisto.internal.converters.HundredsToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.converters.NumberToWordsConverter;
 import pl.allegro.finance.tradukisto.internal.languages.bulgarian.BulgarianIntegerToWordsConverter;
+import pl.allegro.finance.tradukisto.internal.languages.azerbaijani.AzerbaijaniValues;
 import pl.allegro.finance.tradukisto.internal.languages.bulgarian.BulgarianValues;
 import pl.allegro.finance.tradukisto.internal.languages.croatian.CroatianValues;
 import pl.allegro.finance.tradukisto.internal.languages.czech.CzechIntegerToWordsConverter;
@@ -379,6 +380,10 @@ public final class Container {
         );
 
         return new Container(integerToStringConverter, longToStringConverter, bigDecimalToBankingMoneyConverter);
+    }
+
+    public static Container azerbaijaniContainer() {
+        return new Container(new AzerbaijaniValues());
     }
 
     private final IntegerToStringConverter integerConverter;
